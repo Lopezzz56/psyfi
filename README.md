@@ -1,3 +1,6 @@
+![Cover Image](https://github.com/Lopezzz56/psyfi/blob/main/assets/images/cover.png?raw=true)
+
+
 # 🧠 PSY FI – Empowering Mental Wellness with AI and Community
 
 ## 💡 Problem Statement
