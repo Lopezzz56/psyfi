@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "600694678064",
+    "project_id": "psyfi-f6f44",
+    "storage_bucket": "psyfi-f6f44.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600694678064:android:e294453ba3fa7fe62603f5",
+        "android_client_info": {
+          "package_name": "com.example.psy_fi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4wD54vnFKErFH7mBjISWXu9s2ZeII0mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

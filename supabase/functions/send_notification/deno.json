@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "deno.ns"]
+  },
+  "imports": {
+    "npm:google-auth-library": "npm:google-auth-library@8.8.0"
+  }
+}
