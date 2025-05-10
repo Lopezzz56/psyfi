@@ -37,7 +37,7 @@ String greeting = '';
   void initState() {
     super.initState();
       tasks = [
-      // {'title': 'Grounding', 'route': '/grounding-info'},
+      {'title': 'Grounding', 'route': '/grounding-info'},
       {'title': 'Meditation', 'route': '/breathing-info'},
       {'title': 'Calming Audio', 'route': '/calming-info'},
     ];
