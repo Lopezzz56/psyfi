@@ -153,13 +153,14 @@ class _MainScreenState extends State<MainScreen> {
                         label: "Home",
                       ),
                       BottomNavigationBarItem(
-                        icon: Icon(Icons.psychology_outlined),
-                        label: "Posts",
-                      ),
-                      BottomNavigationBarItem(
                         icon: Icon(Icons.chat),
                         label: "Ai chat",
                       ),
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.psychology_outlined),
+                        label: "Posts",
+                      ),
+
                       BottomNavigationBarItem(
                         icon: Icon(Icons.forum),
                         label: "Chat",
