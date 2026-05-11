@@ -1,9 +1,12 @@
 # PsyFi — Emotionally Adaptive Mental Wellness Companion
 
 <p align="center">
-  <img src="assets/images/psyfyimg.png" alt="PsyFi Logo" width="120"/>
+  <img 
+    src="https://raw.githubusercontent.com/Lopezzz56/psyfi/main/psy_fi/assets/images/cover2.png" 
+    alt="PsyFi Cover"
+    width="100%"
+  />
 </p>
-
 <p align="center">
   <strong>
     A privacy-focused emotional wellness companion designed to support reflection,
