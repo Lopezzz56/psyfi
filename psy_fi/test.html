@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat with LLM</title>
+</head>
+<body>
+  <h2>Chat</h2>
+  <input id="input" placeholder="Type a message..." />
+  <button onclick="sendMessage()">Send</button>
+  <pre id="log"></pre>
+
+  <script>
+    const socket = new WebSocket("ws://localhost:8000/ws");
+    const log = document.getElementById("log");
+
+    socket.onmessage = (event) => {
+      log.textContent += "AI: " + event.data + "\n";
+    };
+
+    function sendMessage() {
+      const input = document.getElementById("input");
+      const msg = input.value;
+      log.textContent += "You: " + msg + "\n";
+      socket.send(msg);
+      input.value = "";
+    }
+
+    socket.onopen = () => log.textContent += "✅ Connected\n";
+    socket.onclose = () => log.textContent += "❌ Disconnected\n";
+  </script>
+</body>
+</html>
