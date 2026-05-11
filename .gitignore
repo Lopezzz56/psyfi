@@ -180,3 +180,9 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# Model weights
+*.gguf
+
+# Supabase secrets
+supabase/config.toml
