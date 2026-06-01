@@ -2,7 +2,7 @@
 
 <p align="center">
   <img 
-    src="https://raw.githubusercontent.com/Lopezzz56/psyfi/main/psy_fi/assets/images/cover2.png" 
+    src="https://raw.githubusercontent.com/Lopezzz56/psyfi/main/psy_fi/assets/images/cover2.jpg" 
     alt="PsyFi Cover"
     width="100%"
   />

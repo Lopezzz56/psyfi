@@ -157,32 +157,26 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
-# Environments
-.env
+# Environments and Secrets
+**/.env
+**/.env.*
+**/.env.local
+**/.env.*.local
 .venv
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+**/supabase/config.toml
+**/*.key
+**/*.pem
+**/*_secret*
+**/service_role*
+**/firebase_key*
+**/google-services.json
+**/GoogleService-Info.plist
 
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Model weights
-*.gguf
-
-# Supabase secrets
-supabase/config.toml
+# Allow whitelisted releases folder
+!/releases/
+!/releases/*.apk
