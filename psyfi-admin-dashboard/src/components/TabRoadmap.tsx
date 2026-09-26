@@ -114,11 +114,21 @@ export default function TabRoadmap() {
         const { data: dbFeedback } = await supabase
           .from('user_feedback')
           .select('*')
-          .eq('feedback_type', 'Addition of New Feature')
+          .in('feedback_type', [
+            'Addition of New Feature',
+            'Improvement of Feature',
+            'detailed',
+            'aichat_detailed_feedback'
+          ])
           .order('created_at', { ascending: false });
         
         if (dbFeedback) {
-          const mappedTasks = dbFeedback.map(mapFeedbackToTask);
+          const validFeedback = dbFeedback.filter((f: UserFeedbackItem) => 
+            f.feedback && 
+            f.feedback.trim() !== '' && 
+            f.feedback.toLowerCase() !== 'negative'
+          );
+          const mappedTasks = validFeedback.map(mapFeedbackToTask);
           setTasks(mappedTasks);
         }
       } catch (err) {
@@ -136,9 +146,20 @@ export default function TabRoadmap() {
         'postgres_changes',
         { event: 'INSERT', schema: 'public', table: 'user_feedback' },
         (payload) => {
-          const f = payload.new;
-          if (f.feedback_type === 'Addition of New Feature') {
-            const newTask = mapFeedbackToTask(f as UserFeedbackItem);
+          const f = payload.new as UserFeedbackItem;
+          const allowedTypes = [
+            'Addition of New Feature',
+            'Improvement of Feature',
+            'detailed',
+            'aichat_detailed_feedback'
+          ];
+          if (
+            f.feedback &&
+            f.feedback.trim() !== '' &&
+            f.feedback.toLowerCase() !== 'negative' &&
+            allowedTypes.includes(f.feedback_type)
+          ) {
+            const newTask = mapFeedbackToTask(f);
             // Dynamic append to backlog column
             newTask.status = 'Backlog'; // Forces new sandbox inputs into Backlog column visually
             
@@ -199,7 +220,7 @@ export default function TabRoadmap() {
       </div>
 
       {!hasTasks ? (
-        <EmptyState tableName="user_feedback" description="No user feedback entries of type 'Addition of New Feature' exist to assemble the product roadmap." />
+        <EmptyState tableName="user_feedback" description="No user feedback entries containing feature addition, improvement, or detailed suggestions exist to assemble the product roadmap." />
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {columns.map((col) => {

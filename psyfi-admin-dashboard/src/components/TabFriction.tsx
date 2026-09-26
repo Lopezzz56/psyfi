@@ -90,6 +90,24 @@ export default function TabFriction() {
         <p className="text-xs text-gray-400">Comparing positive interactions against raw friction indices (quick_negative logs)</p>
       </div>
 
+      {/* Developer Insight Banner */}
+      <div className="bg-[#141517] border border-indigo-500/20 rounded-2xl p-5 mb-6">
+        <h3 className="text-xs font-black text-[#6366F1] uppercase tracking-widest flex items-center gap-2 mb-2">
+          💡 Developer Guide: Understanding the Friction Matrix
+        </h3>
+        <p className="text-xs text-gray-300 leading-relaxed mb-3">
+          This matrix measures user frustration per feature. It calculates the <strong>Friction Ratio</strong> using the formula:
+        </p>
+        <div className="bg-black/40 border border-white/5 rounded-xl p-3 font-mono text-xs text-center text-[#6366F1] mb-3 select-all">
+          Friction Ratio = (Quick Negative Feedback Logs / Total Feedback Logs) * 100
+        </div>
+        <ul className="list-disc pl-5 space-y-1.5 text-xs text-gray-400">
+          <li><strong>Quick Negative Logs</strong> are triggered when a user taps a dislike/negative feedback strip in the app.</li>
+          <li><strong>Friction Ratio &ge; 15%</strong> triggers a blinking amber warning status light, indicating significant user friction or UX bugs.</li>
+          <li><strong>How to use this</strong>: Use this telemetry to prioritize refactoring, UX refinements, and bug fixes on specific features showing elevated distress signals.</li>
+        </ul>
+      </div>
+
       {!hasData ? (
         <EmptyState tableName="user_feedback" description="No client-side feature usage or feedback events have been logged in Supabase yet." />
       ) : (
